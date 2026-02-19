@@ -32,7 +32,6 @@ int main(int argc, char *argv[]){
     int myRank;
     int comm_sz;
     //MPI Initialization
-    //MPI_Init(NULL, NULL);
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
@@ -49,8 +48,6 @@ int main(int argc, char *argv[]){
         printf("No decryption found for this dictionary.\n");
     }
     free(inputwrd); //leak patch test
-    //MPI Finalization
-    //MPI_Finalize();
 
     //MPI Finalization
     MPI_Finalize();
@@ -191,7 +188,6 @@ void decryptWord(char * cryptwrd, char * dictPath, int myRank, int comm_sz){
         flag = 1;
     }
     free(letters);
-    // MPI_Finalize();
 
 }
 
